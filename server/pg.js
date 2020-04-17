@@ -1,7 +1,7 @@
 const { Pool } = require('pg');
 
-// **** REPLACE STRING BELOW *****
-const connectionString = 'CONNECTION STRING FOR DB';
+const connectionString =
+  'postgres://tqflypco:QkT4bWcd7jt4j6vSzzOaCisq6EqFVJ-x@drona.db.elephantsql.com:5432/tqflypco';
 
 const pool = new Pool({
   connectionString,

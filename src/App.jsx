@@ -36,7 +36,7 @@ const App = () => {
   console.log('in state ', characters);
 
   return (
-    <div>
+    <div id="app">
       <h1>Breaking Bad Character Index</h1>
       {/* <Search /> */}
       <CharacterCard />

@@ -1,5 +1,15 @@
+:root {
+  --bb-background: #0d3e10;
+  --bb-color: #dadde6;
+}
+
 body {
+  background-color: var(--bb-background);
+  color: var(--bb-color);
+}
+
+#app {
   display: flex;
-  background-color: dimgrey;
-  color: whitesmoke;
+  flex-direction: column;
+  align-items: center;
 }

@@ -18,10 +18,6 @@ app.get('/characters', fetchCharacters, (req, res) => {
   res.status(200).send(res.locals.characters);
 });
 
-app.get('/orderedcharacters', fetchOrderedCharacters, (req, res) => {
-  res.status(200).send(res.locals.orderedCharacters);
-});
-
 app.get('/', (req, res) =>
   res.sendFile(path.resolve(__dirname, '../dist/index.html'))
 );

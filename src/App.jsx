@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-// import Search from './components/Search';
-import CharacterCard from './components/CharacterCard';
+import Search from './components/Search.jsx';
+import CharacterCard from './components/CharacterCard.jsx';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [characters, setCharacters] = useState(null);
-  const [orderedCharacters, setOrderedCharacters] = useState(null);
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -19,26 +18,11 @@ const App = () => {
     fetchCharacters();
   }, []);
 
-  useEffect(() => {
-    const fetchOrderedCharacters = async () => {
-      const orderedCharacterPromise = await fetch('/orderedcharacters');
-      const orderedCharacters = await orderedCharacterPromise.json();
-
-      console.log(orderedCharacters);
-      setOrderedCharacters(orderedCharacters);
-    };
-
-    if (!isLoading && !orderedCharacters) {
-      fetchOrderedCharacters();
-    }
-  }, [isLoading]);
-
-  console.log('in state ', characters);
-
+  console.log('state chars --> ', characters);
   return (
-    <div id="app">
+    <div className="app">
       <h1>Breaking Bad Character Index</h1>
-      {/* <Search /> */}
+      <Search />
       <CharacterCard />
     </div>
   );

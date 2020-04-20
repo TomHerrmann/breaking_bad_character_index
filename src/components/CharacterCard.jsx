@@ -1,7 +1,11 @@
 import React from 'react';
 
 const characterCard = () => {
-  return <h2>Name</h2>;
+  return (
+    <div className="characer-card">
+      <h2>Name</h2>
+    </div>
+  );
 };
 
 export default characterCard;

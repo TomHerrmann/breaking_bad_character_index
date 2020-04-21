@@ -50,8 +50,10 @@ body {
 
 .character-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+
+  max-width: 1000px;
 }
 
 .character-card {
@@ -99,4 +101,43 @@ body {
 
 .character-card li {
   margin: 5px;
+}
+
+/* animated spinner source - https://loading.io/css/*/
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  width: 200px;
+  height: 200px;
+}
+.loading-spinner div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid var(--bb-color);
+  border-radius: 50%;
+  animation: loading-spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--bb-color) transparent transparent transparent;
+}
+.loading-spinner div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loading-spinner div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loading-spinner div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes loading-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

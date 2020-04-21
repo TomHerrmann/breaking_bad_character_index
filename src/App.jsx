@@ -26,11 +26,6 @@ const App = () => {
     fetchCharacters();
   }, []);
 
-  // const onDebounceSearch = (query) => {
-  //   setSearchQuery(query);
-  //   debounce(onSearch, 2000);
-  // };
-
   const onSearch = (event) => {
     setSearchQuery(event.target.value);
 
@@ -58,7 +53,7 @@ const App = () => {
             />
           ))
         ) : (
-          <div class="loading-spinner">
+          <div className="loading-spinner">
             <div></div>
             <div></div>
             <div></div>

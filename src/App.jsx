@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import Search from './components/Search.jsx';
 import CharacterCard from './components/CharacterCard.jsx';
-import formatCharacters from './utils/formatCharacters';
+import NotFound from './components/NotFound.jsx';
 
 import { defaultCharacters } from './utils/enums';
+import formatCharacters from './utils/formatCharacters';
 import search from './utils/search';
-import { debounce } from 'lodash';
 
 const App = () => {
   const [characters, setCharacters] = useState(null);
@@ -33,6 +33,7 @@ const App = () => {
       setDisplayCharacters(defaultCharacters);
     } else {
       setIsLoading(true);
+      // add logic to show "no results"
       setDisplayCharacters(search(event.target.value, Object.keys(characters)));
       setIsLoading(false);
     }
@@ -46,12 +47,16 @@ const App = () => {
       <Search onSearch={onSearch} searchQuery={searchQuery} />
       <div className="character-container">
         {!isLoading ? (
-          displayCharacters.map((displayCharacter) => (
-            <CharacterCard
-              character={characters[displayCharacter]}
-              key={characters[displayCharacter].char_id}
-            />
-          ))
+          displayCharacters.length ? (
+            displayCharacters.map((displayCharacter) => (
+              <CharacterCard
+                character={characters[displayCharacter]}
+                key={characters[displayCharacter].char_id}
+              />
+            ))
+          ) : (
+            <NotFound />
+          )
         ) : (
           <div className="loading-spinner">
             <div></div>

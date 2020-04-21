@@ -1,2 +1,2 @@
-export const removeSAndB = (str) =>
+export const removeQuotesAndBraces = (str) =>
   str.replace(/["{}]/g, '').replace(/[,]/g, ', ');

@@ -1,5 +1,5 @@
 import React from 'react';
-import { removeSAndB } from '../utils/removeStringsAndBraces';
+import { removeQuotesAndBraces } from '../utils/removeQuotesAndBraces';
 
 const CharacterCard = ({ character }) => {
   const {
@@ -29,7 +29,7 @@ const CharacterCard = ({ character }) => {
           </li>
           <li>
             <strong>Occupation: </strong>
-            {removeSAndB(occupation)}
+            {removeQuotesAndBraces(occupation)}
           </li>
           <li>
             <strong>Portrayed By: </strong>

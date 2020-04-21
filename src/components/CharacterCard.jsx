@@ -14,13 +14,37 @@ const CharacterCard = ({ character }) => {
 
   return (
     <div className="character-card">
-      <img src={img} alt={`${name} from ${category}`} />
-      <strong>Name: {name}</strong>
-      <p>Nickname: {nickname}</p>
-      <p>Occupation: {removeSAndB(occupation)}</p>
-      <p>Portrayed By: {portrayed}</p>
-      <p>Status: {status}</p>
-      <p>First Appeared On: {category}</p>
+      <div className="img-container">
+        <img src={img} alt={`${name} from ${category}`} />
+      </div>
+      <div className="ul-container">
+        <ul>
+          <li>
+            <strong>Name: </strong>
+            {name}
+          </li>
+          <li>
+            <strong>Nickname: </strong>
+            {nickname}
+          </li>
+          <li>
+            <strong>Occupation: </strong>
+            {removeSAndB(occupation)}
+          </li>
+          <li>
+            <strong>Portrayed By: </strong>
+            {portrayed}
+          </li>
+          <li>
+            <strong>Status: </strong>
+            {status}
+          </li>
+          <li>
+            <strong>First Appeared On: </strong>
+            {category}
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

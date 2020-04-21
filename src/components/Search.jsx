@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Search = ({ onSearch, searchQuery }) => {
   return (
-    <div className="search">
+    <div className="search-container">
       <form onSubmit={(event) => event.preventDefault()}>
         <label>
           <input

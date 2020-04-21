@@ -45,16 +45,20 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Breaking Bad Character Index</h1>
+      <div className="title-container">
+        <h1>Breaking Bad Character Index</h1>
+      </div>
       <Search onSearch={onSearch} searchQuery={searchQuery} />
-      {!isLoading
-        ? displayCharacters.map((displayCharacter) => (
-            <CharacterCard
-              character={characters[displayCharacter]}
-              key={characters[displayCharacter].char_id}
-            />
-          ))
-        : null}
+      <div className="character-container">
+        {!isLoading
+          ? displayCharacters.map((displayCharacter) => (
+              <CharacterCard
+                character={characters[displayCharacter]}
+                key={characters[displayCharacter].char_id}
+              />
+            ))
+          : null}
+      </div>
     </div>
   );
 };

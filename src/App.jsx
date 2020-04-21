@@ -50,14 +50,21 @@ const App = () => {
       </div>
       <Search onSearch={onSearch} searchQuery={searchQuery} />
       <div className="character-container">
-        {!isLoading
-          ? displayCharacters.map((displayCharacter) => (
-              <CharacterCard
-                character={characters[displayCharacter]}
-                key={characters[displayCharacter].char_id}
-              />
-            ))
-          : null}
+        {!isLoading ? (
+          displayCharacters.map((displayCharacter) => (
+            <CharacterCard
+              character={characters[displayCharacter]}
+              key={characters[displayCharacter].char_id}
+            />
+          ))
+        ) : (
+          <div class="loading-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        )}
       </div>
     </div>
   );

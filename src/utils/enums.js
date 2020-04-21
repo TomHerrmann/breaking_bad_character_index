@@ -1,8 +1,8 @@
 export const defaultCharacters = [
-  'Walter White Heisenberg',
-  "Jesse Pinkman Jesse Pinkman Cap n' Cook",
-  'Skyler White Sky',
-  'Walter White Jr. Flynn',
-  'Henry Schrader Hank',
-  'Marie Schrader Marie',
+  'walter white heisenberg',
+  "jesse pinkman cap n' cook",
+  'skyler white sky',
+  'walter white jr. flynn',
+  'henry schrader hank',
+  'marie schrader marie',
 ];

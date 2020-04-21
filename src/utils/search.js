@@ -1,9 +1,10 @@
 const search = (query, storeArr) => {
   const results = [];
 
-  for (let i = 0; i < storeArr.length; i++) {
-    if (elem.includes(query)) results.push(elem);
+  console.log(query);
 
+  for (let i = 0; i < storeArr.length; i++) {
+    if (storeArr[i].includes(query.toLowerCase())) results.push(storeArr[i]);
     if (results.length === 6) return results;
   }
 

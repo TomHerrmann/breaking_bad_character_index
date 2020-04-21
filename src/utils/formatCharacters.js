@@ -4,7 +4,7 @@ const formatCharacters = (charactersArr) => {
   charactersArr.forEach((character) => {
     const { name, nickname } = character;
 
-    const key = `${name} ${nickname}`;
+    const key = `${name} ${nickname}`.toLowerCase();
     formatted[key] = character;
   });
 

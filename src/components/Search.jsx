@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-const Search = () => {
+const Search = ({ onSearch, searchQuery }) => {
   return (
     <div className="search">
-      <form>
+      <form onSubmit={(event) => event.preventDefault()}>
         <label>
           <input
             type="text"
             placeholder="Character Name"
-            // onSubmit={() => {
-            //
-            // }}
+            onChange={(event) => {
+              onSearch(event);
+            }}
+            value={searchQuery}
           />
         </label>
       </form>

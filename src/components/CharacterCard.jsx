@@ -1,5 +1,5 @@
 import React from 'react';
-import { removeQuotesAndBraces } from '../utils/removeQuotesAndBraces';
+import removeQuotesAndBraces from '../utils/removeQuotesAndBraces';
 
 const CharacterCard = ({ character }) => {
   const {

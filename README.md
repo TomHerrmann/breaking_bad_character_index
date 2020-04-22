@@ -8,7 +8,7 @@
 
 ## Product
 
-I created a responsive web application that allows a user to quickly filter through the entire list of Breaking Bad characters. As on the of the greatest television shows of all time, the characters of Breaking Bad and it's spin-off Better Call Saul were an obvious choice for a list of things to quick filter.
+I created a responsive web application that allows a user to quickly filter through the entire list of Breaking Bad characters by name. As on the of the greatest television shows of all time, the characters of Breaking Bad and it's spin-off Better Call Saul were an obvious choice for a list of things to quick filter.
 
 The search results are displayed alphabetically by name, with the exception of the default results, which are organized by importance.
 
@@ -56,4 +56,4 @@ yarn start
 
 4. Proceed to [localhost:3000](http://localhost:3000/)
 
-5. Search for your favorite Breaking Bad characters
+5. Search for your favorite Breaking Bad characters by name

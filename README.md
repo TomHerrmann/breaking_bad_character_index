@@ -12,7 +12,7 @@ I created a responsive web application that allows a user to quickly filter thro
 
 The search results are displayed alphabetically by name, with the exception of the default results, which are organized by importance.
 
-This data is populated in a PostgresQL database hosted through ElephantSQL, and the information was populated from a to the characters endpoint on the [Breaking Bad API](https://breakingbadapi.com/).
+This data is populated in a PostgresQL database hosted through ElephantSQL, and the information was populated from the characters endpoint on the [Breaking Bad API](https://breakingbadapi.com/).
 
 ## Features
 
@@ -24,7 +24,9 @@ This data is populated in a PostgresQL database hosted through ElephantSQL, and 
 
 ## Usage
 
-1. Clone this repository and run the following
+1. Clone this repository
+
+2. Run the following termainl command in the project's root direcotry
 
 NPM:
 
@@ -32,12 +34,12 @@ NPM:
 npm i
 ```
 
-Yarn
+Yarn:
 
 ```
 yarn
 ```
 
-2. Proceed to [localhost:3000](localhost:3000)
+3. Proceed to [localhost:3000](localhost:3000)
 
-3. Search for your favorite Breaking Bad characters
+4. Search for your favorite Breaking Bad characters

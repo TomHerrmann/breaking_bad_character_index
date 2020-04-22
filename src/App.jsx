@@ -15,19 +15,19 @@ const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    try {
-      const fetchCharacters = async () => {
-        const characterPromise = await fetch('/characters');
-        const characters = await characterPromise.json();
+    const fetchCharacters = async () => {
+      const characterPromise = await fetch('/characters');
+      const characters = await characterPromise.json();
 
-        setCharacters(formatCharacters(characters));
-        setIsLoading(false);
-      };
+      setCharacters(formatCharacters(characters));
+      setIsLoading(false);
+    };
+
+    try {
+      fetchCharacters();
     } catch (err) {
       console.log(`Fetch failed with ${err}`);
     }
-
-    fetchCharacters();
   }, []);
 
   const onSearch = (event) => {

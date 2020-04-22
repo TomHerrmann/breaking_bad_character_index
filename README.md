@@ -8,11 +8,11 @@
 
 ## Product
 
-I created a responsive web application that allows a user to quickly filter through the entire list of Breaking Bad characters by name. As on the of the greatest television shows of all time, the characters of Breaking Bad and it's spin-off Better Call Saul were an obvious choice for a list of things to quick filter.
+I created a responsive web application that allows a user to quickly filter through the entire list of **Breaking Bad** characters by name. As one the of the greatest television shows of all time, the characters of **Breaking Bad** and it's spin-off **Better Call Saul** were an obvious choice for a list of things to quick filter.
 
 The search results are displayed alphabetically by name, with the exception of the default results, which are organized by importance.
 
-This data is populated in a PostgresQL database hosted through ElephantSQL, and the information was populated from the characters endpoint on the [Breaking Bad API](https://breakingbadapi.com/).
+This data is populated in a PostgresSQL database hosted through ElephantSQL, and the information was populated from the characters endpoint on the [Breaking Bad API](https://breakingbadapi.com/).
 
 ## Features
 
@@ -26,7 +26,7 @@ This data is populated in a PostgresQL database hosted through ElephantSQL, and 
 
 1. Clone this repository
 
-2. Run the following termainl command in the project's root direcotry
+2. Run the following terminal command in the project's root directory
 
 NPM:
 
@@ -40,7 +40,7 @@ Yarn:
 yarn
 ```
 
-4. Run the following to start your server
+3. Run the following to start your server
 
 NPM:
 
@@ -56,4 +56,52 @@ yarn start
 
 4. Proceed to [localhost:3000](http://localhost:3000/)
 
-5. Search for your favorite Breaking Bad characters by name
+5. Search for your favorite **Breaking Bad** characters by name
+
+## Testing
+
+1. Run the following command in the root directory
+
+NPM:
+
+```
+npm run test
+```
+
+Yarn:
+
+```
+yarn run test
+```
+
+## Contribute
+
+1. Clone this repository
+
+2. Run the following terminal command in the project's root directory
+
+NPM:
+
+```
+npm i
+```
+
+Yarn:
+
+```
+yarn
+```
+
+3. Run the following to start your dev server
+
+NPM:
+
+```
+npm run dev
+```
+
+Yarn:
+
+```
+yarn run dev
+```

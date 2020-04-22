@@ -1,5 +1,5 @@
 {
-  "name": "notherwestern_mutual_takehome",
+  "name": "northwestern_mutual_takehome",
   "version": "1.0.0",
   "description": "Take-home assignment for Northwestern Mutual",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TomHerrmann/notherwestern_mutual_takehome.git"
+    "url": "git+https://github.com/TomHerrmann/northwestern_mutual_takehome.git"
   },
   "author": "Tom Herrmann",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TomHerrmann/notherwestern_mutual_takehome/issues"
+    "url": "https://github.com/TomHerrmann/northwestern_mutual_takehome/issues"
   },
-  "homepage": "https://github.com/TomHerrmann/notherwestern_mutual_takehome#readme",
+  "homepage": "https://github.com/TomHerrmann/northwestern_mutual_takehome#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",

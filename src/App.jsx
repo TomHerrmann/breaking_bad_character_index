@@ -33,7 +33,6 @@ const App = () => {
       setDisplayCharacters(defaultCharacters);
     } else {
       setIsLoading(true);
-      // add logic to show "no results"
       setDisplayCharacters(search(event.target.value, Object.keys(characters)));
       setIsLoading(false);
     }
@@ -58,6 +57,7 @@ const App = () => {
             <NotFound />
           )
         ) : (
+          // animated spinner source - https://loading.io/css/
           <div className="loading-spinner">
             <div></div>
             <div></div>

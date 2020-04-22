@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CharacterCard /> should render correctly 1`] = `
+<div
+  className="character-card"
+>
+  <div
+    className="img-container"
+  >
+    <img
+      alt="thomas from person"
+      src="profile_pic"
+    />
+  </div>
+  <div
+    className="ul-container"
+  >
+    <ul>
+      <li>
+        <strong>
+          Name: 
+        </strong>
+        thomas
+      </li>
+      <li>
+        <strong>
+          Nickname: 
+        </strong>
+        tom
+      </li>
+      <li>
+        <strong>
+          Occupation: 
+        </strong>
+        software engineer, podcast host
+      </li>
+      <li>
+        <strong>
+          Portrayed By: 
+        </strong>
+        himself
+      </li>
+      <li>
+        <strong>
+          Status: 
+        </strong>
+        alive
+      </li>
+      <li>
+        <strong>
+          First Appeared On: 
+        </strong>
+        person
+      </li>
+    </ul>
+  </div>
+</div>
+`;

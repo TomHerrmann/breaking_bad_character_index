@@ -40,6 +40,20 @@ Yarn:
 yarn
 ```
 
-3. Proceed to [localhost:3000](http://localhost:3000/)
+4. Run the following to start your server
 
-4. Search for your favorite Breaking Bad characters
+NPM:
+
+```
+npm start
+```
+
+Yarn:
+
+```
+yarn start
+```
+
+4. Proceed to [localhost:3000](http://localhost:3000/)
+
+5. Search for your favorite Breaking Bad characters

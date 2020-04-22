@@ -40,6 +40,6 @@ Yarn:
 yarn
 ```
 
-3. Proceed to [localhost:3000](localhost:3000)
+3. Proceed to [localhost:3000](http://localhost:3000/)
 
 4. Search for your favorite Breaking Bad characters

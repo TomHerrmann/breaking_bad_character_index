@@ -40,7 +40,21 @@ Yarn:
 yarn
 ```
 
-3. Run the following to start your server
+3. Run the following to build your bundle file
+
+NPM:
+
+```
+npm run build
+```
+
+Yarn:
+
+```
+yarn run build
+```
+
+4. Run the following to start your server
 
 NPM:
 
@@ -54,9 +68,9 @@ Yarn:
 yarn start
 ```
 
-4. Proceed to [localhost:3000](http://localhost:3000/)
+5. Proceed to [localhost:3000](http://localhost:3000/)
 
-5. Search for your favorite **Breaking Bad** characters by name
+6. Search for your favorite **Breaking Bad** characters by name
 
 ## Testing
 

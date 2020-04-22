@@ -1,4 +1,4 @@
-# Notherwestern Mutual Takehome
+# Northwestern Mutual Takehome
 
 ###### Author: Tom Herrmann
 
@@ -12,7 +12,7 @@ I created a responsive web application that allows a user to quickly filter thro
 
 The search results are displayed alphabetically by name, with the exception of the default results, which are organized by importance.
 
-This data is populated in a PostgresSQL database hosted through ElephantSQL, and the information was populated from the characters endpoint on the [Breaking Bad API](https://breakingbadapi.com/).
+This data is populated in a PostgreSQL database hosted through ElephantSQL, and the information was populated from the characters endpoint on the [Breaking Bad API](https://breakingbadapi.com/).
 
 ## Features
 

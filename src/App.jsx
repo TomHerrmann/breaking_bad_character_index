@@ -8,17 +8,28 @@ import NotFound from './components/NotFound.jsx';
 import { defaultCharacters } from './utils/enums';
 import formatCharacters from './utils/formatCharacters';
 import search from './utils/search';
+import {
+  SET_CHARACTERS,
+  SET_DISPLAY_CHARACTERS,
+  SET_SEARCH_QUERY,
+} from './actions/types';
+
+const mapStateToProps = (store) => {
+  return store;
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCharacters: () => dispatch({ type: SET_CHARACTERS }),
+    setDisplayCharacters: () => dispatch({ type: SET_DISPLAY_CHARACTERS }),
+    setSearchQuery: () => dispatch({ type: SET_SEARCH_QUERY }),
+  };
+};
 
 const App = () => {
   // const [characters, setCharacters] = useState(null);
   // const [displayCharacters, setDisplayCharacters] = useState(defaultCharacters);
-  const [isLoading, setIsLoading] = useState(true);
   // const [searchQuery, setSearchQuery] = useState('');
-
-  const mapStateToProps = (store) => {
-    return Object.assign({}, store, {});
-  };
-  const mapDispatchToProps = (dispatch) => {};
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchCharacters = async () => {

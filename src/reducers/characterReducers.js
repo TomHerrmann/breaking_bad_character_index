@@ -5,7 +5,6 @@ import { defaultCharacters } from '../utils/enums';
 const intialState = {
   characters: null,
   displayCharacters: defaultCharacters,
-  isLoading: true,
   searchQuery: '',
 };
 

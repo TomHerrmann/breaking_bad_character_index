@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import store from './store';
 
 const Search = ({ onSearch, searchQuery }) => {
   return (

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 
 import Search from './components/Search.jsx';
 import CharacterCard from './components/CharacterCard.jsx';
@@ -9,10 +10,15 @@ import formatCharacters from './utils/formatCharacters';
 import search from './utils/search';
 
 const App = () => {
-  const [characters, setCharacters] = useState(null);
-  const [displayCharacters, setDisplayCharacters] = useState(defaultCharacters);
+  // const [characters, setCharacters] = useState(null);
+  // const [displayCharacters, setDisplayCharacters] = useState(defaultCharacters);
   const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
+  // const [searchQuery, setSearchQuery] = useState('');
+
+  const mapStateToProps = (store) => {
+    return Object.assign({}, store, {});
+  };
+  const mapDispatchToProps = (dispatch) => {};
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -74,4 +80,7 @@ const App = () => {
   );
 };
 
-export default App;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

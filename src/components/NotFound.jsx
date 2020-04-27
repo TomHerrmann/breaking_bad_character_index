@@ -1,4 +1,6 @@
 import React from 'react';
+import store from './store';
+
 import gifs from '../utils/gifsImport';
 
 const NotFound = () => {

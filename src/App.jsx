@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import Search from './components/Search.jsx';
 import CharacterCard from './components/CharacterCard.jsx';
 import NotFound from './components/NotFound.jsx';
+import LoadingSpinner from './components/LoadingSpinner.jsx';
+import Search from './components/Search.jsx';
 
 import { defaultCharacters } from './utils/enums';
 import formatCharacters from './utils/formatCharacters';
@@ -61,13 +62,7 @@ const App = () => {
             <NotFound />
           )
         ) : (
-          // animated spinner source - https://loading.io/css/
-          <div className="loading-spinner">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+          <LoadingSpinner />
         )}
       </div>
     </div>

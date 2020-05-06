@@ -7,7 +7,9 @@
     "build": "webpack --mode production",
     "dev": "nodemon server/server.js & webpack-dev-server --mode development --open",
     "start": "node server/server.js",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/TomHerrmann/breaking_bad_character_index/issues"
   },
-  "homepage": "https://github.com/TomHerrmann/breaking_bad_character_index#readme",
+  "homepage": "https://TomHerrmann/github.io/breaking_bad_character_index",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",

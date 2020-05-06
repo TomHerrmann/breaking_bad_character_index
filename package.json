@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/TomHerrmann/breaking_bad_character_index/issues"
   },
-  "homepage": "https://TomHerrmann/github.io/breaking_bad_character_index",
+  "homepage": "https://TomHerrmann/github.io/",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",

@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   devServer: {
-    contentBase: path.join(__dirname, 'build'),
+    contentBase: path.join(__dirname, 'dist'),
     compress: true,
     hotOnly: true,
     port: 8000,
@@ -40,6 +40,6 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
   },
 };

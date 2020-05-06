@@ -9,14 +9,14 @@ const { fetchCharacters } = require('./controllers/characterController');
 
 app.use(bodyParser.json());
 
-app.use(express.static(path.resolve(__dirname, '../build')));
+app.use(express.static(path.resolve(__dirname, '../dist')));
 
 app.get('/characters', fetchCharacters, (req, res) => {
   res.status(200).send(res.locals.characters);
 });
 
 app.get('/', (req, res) =>
-  res.sendFile(path.resolve(__dirname, '../build/index.html'))
+  res.sendFile(path.resolve(__dirname, '../dist/index.html'))
 );
 
 app.use((err, req, res, next) => {

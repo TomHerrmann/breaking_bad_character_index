@@ -5,10 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-const {
-  fetchCharacters,
-  fetchOrderedCharacters,
-} = require('./controllers/characterController');
+const { fetchCharacters } = require('./controllers/characterController');
 
 app.use(bodyParser.json());
 

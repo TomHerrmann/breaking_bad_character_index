@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchCharacters = async () => {
-      const characterPromise = await fetch('/characters');
+      const characterPromise = await fetch(`${window.location.href}characters`);
       const characters = await characterPromise.json();
 
       setCharacters(formatCharacters(characters));

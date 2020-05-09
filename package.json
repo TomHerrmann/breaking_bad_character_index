@@ -7,9 +7,7 @@
     "build": "webpack --mode production",
     "dev": "nodemon server/server.js & webpack-dev-server --mode development --open",
     "start": "node server/server.js",
-    "test": "jest --watch",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -24,7 +22,6 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "gh-pages": "^2.2.0",
     "lodash": "^4.17.15",
     "node-fetch": "^2.6.0",
     "pg": "^8.0.2",
@@ -50,5 +47,8 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
+  },
+  "engines": {
+    "node": "13.13.0"
   }
 }

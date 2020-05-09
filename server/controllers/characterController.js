@@ -1,13 +1,14 @@
-const pool = require('../pool');
+const client = require('../client');
 
 module.exports = {
   fetchCharacters(req, res, next) {
-    pool
+    client
       .query('SELECT * FROM characters ORDER BY name ASC')
       .then((data) => {
         res.locals.characters = data.rows;
       })
-      .then(() => next())
-      .catch((err) => console.error('Error executing query', err.stack));
+      .catch((err) => console.error('Error executing query', err.stack))
+      .then(() => client.end())
+      .then(() => next());
   },
 };

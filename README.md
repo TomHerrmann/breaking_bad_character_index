@@ -8,7 +8,7 @@
 
 ## Product
 
-[Breaking Bad Character Index](https://obscure-beach-48551.herokuapp.com/)
+[Breaking Bad Character Index](https://breakingbadcharacterindex.herokuapp.com/)
 
 I created a responsive web application that allows a user to quickly filter through the entire list of **Breaking Bad** characters by name. As one the of the greatest television shows of all time, the characters of **Breaking Bad** and it's spin-off **Better Call Saul** were an obvious choice for a list of things to quick filter.
 

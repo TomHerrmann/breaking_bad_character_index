@@ -4,7 +4,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    hotOnly: true,
+    hot: true,
     port: 8000,
     proxy: {
       '/': {

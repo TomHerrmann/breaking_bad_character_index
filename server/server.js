@@ -19,9 +19,7 @@ app.get('/', (req, res) =>
   res.sendFile(path.resolve(__dirname, '../dist/index.html'))
 );
 
-app.get("*", function(req, res) {
-	res.status(404).send("404 - Page Not Found");
-});
+app.get("*", (req, res) => res.status(404).send("404 - Page Not Found"));;
 
 app.use((err, req, res, next) => {
   console.error(err.stack);

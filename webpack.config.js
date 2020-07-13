@@ -4,7 +4,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    hotOnly: true,
+    hot: true,
     port: 8000,
     proxy: {
       '/': {
@@ -34,10 +34,6 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader'],
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ['file-loader'],
       },
     ],

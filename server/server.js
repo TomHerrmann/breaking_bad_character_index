@@ -3,12 +3,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-const {
-  fetchCharacters,
-  fetchOrderedCharacters,
-} = require('./controllers/characterController');
+const { fetchCharacters } = require('./controllers/characterController');
 
 app.use(bodyParser.json());
 
@@ -21,6 +18,8 @@ app.get('/characters', fetchCharacters, (req, res) => {
 app.get('/', (req, res) =>
   res.sendFile(path.resolve(__dirname, '../dist/index.html'))
 );
+
+app.get("*", (req, res) => res.status(404).send("404 - Page Not Found"));;
 
 app.use((err, req, res, next) => {
   console.error(err.stack);

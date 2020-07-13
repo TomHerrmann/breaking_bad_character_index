@@ -20,11 +20,12 @@ const App = ({ apiError, charactersSet, characterSetDisplay }) => {
 
   useEffect(() => {
     const fetchCharacters = async () => {
+      console.log('hitting');
       const characterPromise = await fetch('/characters');
+      console.log('promise', characterPromise);
       const characters = await characterPromise.json();
-
-      setCharacters(formatCharacters(characters));
-      setIsLoading(false);
+      console.log(characters);
+      charactersSet(formatCharacters(characters));
     };
 
     try {

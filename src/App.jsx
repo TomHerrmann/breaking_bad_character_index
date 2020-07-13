@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect, useStore } from 'react-redux';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './actions/actions';
 

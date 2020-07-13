@@ -26,26 +26,28 @@ const App = ({ characters, charactersSet, displayCharacters, isLoading }) => {
     }
   }, []);
 
+  const renderCharContainer = () => {
+    return isLoading ? (
+      <LoadingSpinner />
+    ) : displayCharacters.length ? (
+      displayCharacters.map((displayCharacter) => (
+        <CharacterCard
+          character={characters[displayCharacter]}
+          key={characters[displayCharacter].char_id}
+        />
+      ))
+    ) : (
+      <NotFound />
+    );
+  };
+
   return (
     <div className="app">
       <div className="title-container">
         <h1>Breaking Bad Character Index</h1>
       </div>
       <Search />
-      <div className="character-container">
-        {isLoading ? (
-          <LoadingSpinner />
-        ) : displayCharacters.length ? (
-          displayCharacters.map((displayCharacter) => (
-            <CharacterCard
-              character={characters[displayCharacter]}
-              key={characters[displayCharacter].char_id}
-            />
-          ))
-        ) : (
-          <NotFound />
-        )}
-      </div>
+      <div className="character-container">{renderCharContainer}</div>
     </div>
   );
 };

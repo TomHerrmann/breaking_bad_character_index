@@ -1,13 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 import './style.css';
 
-import App from './App.jsx';
+import AppContainer from './App.jsx';
 
-render(<App />, document.querySelector('#root'));
+render(
+  <Provider store={store}>
+    <AppContainer />
+  </Provider>,
+  document.querySelector('#root')
+);
 
 if (module.hot) {
-  module.hot.accept(App, function() {
+  module.hot.accept(AppContainer, function() {
     console.log('Accepting the updated App module!');
   });
 }

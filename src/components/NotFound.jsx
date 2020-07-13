@@ -1,4 +1,5 @@
 import React from 'react';
+
 import gifs from '../utils/gifsImport';
 
 const NotFound = () => {

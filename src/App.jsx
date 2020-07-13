@@ -10,10 +10,10 @@ import { defaultCharacters } from './utils/enums';
 import formatCharacters from './utils/formatCharacters';
 import search from './utils/search';
 import {
-  SET_CHARACTERS,
-  SET_DISPLAY_CHARACTERS,
-  SET_SEARCH_QUERY,
-} from './actions/types';
+  CHARACTERS_SET,
+  CHARACTERS_SET_DISPLAY,
+  SEARCH_QUERY_SET,
+} from './contstants/actionTypes';
 
 const mapStateToProps = (store) => {
   return store;

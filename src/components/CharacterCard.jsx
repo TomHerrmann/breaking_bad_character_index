@@ -1,5 +1,4 @@
 import React from 'react';
-import store from './store';
 
 import removeQuotesAndBraces from '../utils/removeQuotesAndBraces';
 

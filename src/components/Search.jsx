@@ -33,10 +33,12 @@ const Search = () => {
         <label>
           <input
             type="text"
-            placeholder="Character Name"
+            onBlur={(e) => (e.target.placeholder = 'Character Name')}
             onChange={(event) => {
               onSearch(event);
             }}
+            onFocus={(e) => (e.target.placeholder = '')}
+            placeholder="Character Name"
             value={searchQuery}
           />
         </label>

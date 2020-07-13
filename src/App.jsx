@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useStore } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './actions/actions';
 
@@ -11,18 +11,28 @@ import Search from './components/Search.jsx';
 import formatCharacters from './utils/formatCharacters';
 
 const App = ({ characters, charactersSet, displayCharacters, isLoading }) => {
+  const fetchCharacters = async () => {
+    const characterPromise = await fetch('/characters');
+
+    const characters = await characterPromise.json();
+    window.localStorage.setItem(
+      'bb-characters',
+      JSON.stringify(formatCharacters(characters))
+    );
+    charactersSet(formatCharacters(characters));
+  };
+
   useEffect(() => {
-    const fetchCharacters = async () => {
-      const characterPromise = await fetch('/characters');
-
-      const characters = await characterPromise.json();
-      charactersSet(formatCharacters(characters));
-    };
-
-    try {
-      fetchCharacters();
-    } catch (err) {
-      console.log(`Fetch failed with ${err}`);
+    if (!characters) {
+      try {
+        fetchCharacters();
+      } catch (err) {
+        console.log(`Fetch failed with ${err}`);
+      }
+    } else {
+      setTimeout(() => {
+        charactersSet(JSON.parse(characters));
+      }, 250);
     }
   }, []);
 

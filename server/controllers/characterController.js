@@ -8,7 +8,7 @@ module.exports = {
         res.locals.characters = data.rows;
       })
       .catch((err) => console.error('Error executing query', err.stack))
-      // .then(() => client.end())
+      .then(() => client.end())
       .then(() => next());
   },
 };

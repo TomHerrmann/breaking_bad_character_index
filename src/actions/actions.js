@@ -1,18 +1,19 @@
 import {
+  API_ERROR,
   CHARACTERS_SET,
   CHARACTERS_SET_DISPLAY,
-  SEARCH_QUERY_SET,
-} from './types';
+} from '../contstants/actionTypes';
 
-export const charactersSet = (charactersObj) => ({
+export const apiError = (status) => ({
+  type: API_ERROR,
+  payload: status,
+});
+
+export const charactersSet = (characters) => ({
   type: CHARACTERS_SET,
   payload: charactersObj,
 });
 export const characterSetDisplay = (charactersArr) => ({
   type: CHARACTERS_SET_DISPLAY,
   payload: charactersArr,
-});
-export const searchQuerySet = (query) => ({
-  type: SEARCH_QUERY_SET,
-  payload: query,
 });

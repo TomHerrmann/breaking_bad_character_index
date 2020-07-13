@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from './actions/actions';
 
 import CharacterCard from './components/CharacterCard.jsx';
 import NotFound from './components/NotFound.jsx';
@@ -9,24 +11,8 @@ import Search from './components/Search.jsx';
 import { defaultCharacters } from './utils/enums';
 import formatCharacters from './utils/formatCharacters';
 import search from './utils/search';
-import {
-  CHARACTERS_SET,
-  CHARACTERS_SET_DISPLAY,
-  SEARCH_QUERY_SET,
-} from './contstants/actionTypes';
 
-const mapStateToProps = (store) => {
-  return store;
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setCharacters: () => dispatch({ type: SET_CHARACTERS }),
-    setDisplayCharacters: () => dispatch({ type: SET_DISPLAY_CHARACTERS }),
-    setSearchQuery: () => dispatch({ type: SET_SEARCH_QUERY }),
-  };
-};
-
-const App = () => {
+const App = ({ apiError, charactersSet, characterSetDisplay }) => {
   const [characters, setCharacters] = useState(null);
   const [displayCharacters, setDisplayCharacters] = useState(defaultCharacters);
   const [searchQuery, setSearchQuery] = useState('');
@@ -84,6 +70,13 @@ const App = () => {
       </div>
     </div>
   );
+};
+
+const mapStateToProps = (store) => {
+  return store;
+};
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ ...actions }, dispatch);
 };
 
 const AppContainer = connect(

@@ -1,7 +1,7 @@
 import {
+  API_ERROR,
   CHARACTERS_SET,
   CHARACTERS_SET_DISPLAY,
-  SEARCH_QUERY_SET,
 } from '../contstants/actionTypes';
 
 import { defaultCharacters } from '../utils/enums';
@@ -14,13 +14,18 @@ const intialState = {
 
 const reducer = (state = intialState, action) => {
   switch (action.types) {
-    case CHARACTERS_SET: {
+    case API_ERROR: {
       return { ...state };
+    }
+    case CHARACTERS_SET: {
+      const { contacts } = action.payload;
+      return {
+        ...state,
+        contacts,
+        isLoading: false,
+      };
     }
     case CHARACTERS_SET_DISPLAY: {
-      return { ...state };
-    }
-    case SEARCH_QUERY_SET: {
       return { ...state };
     }
     default:

@@ -57,7 +57,7 @@ const App = ({ characters, charactersSet, displayCharacters, isLoading }) => {
         <h1>Breaking Bad Character Index</h1>
       </div>
       <Search />
-      <div className="character-container">{renderCharContainer}</div>
+      <div className="character-container">{renderCharContainer()}</div>
     </div>
   );
 };

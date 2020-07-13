@@ -1,7 +1,8 @@
 import {
   API_ERROR,
+  APP_LOADING,
   CHARACTERS_SET,
-  CHARACTERS_SET_DISPLAY,
+  CHARACTERS_DISPLAY_SET,
 } from '../contstants/actionTypes';
 
 export const apiError = (status) => ({
@@ -9,11 +10,16 @@ export const apiError = (status) => ({
   payload: status,
 });
 
+export const appLoading = (isLoading) => ({
+  type: APP_LOADING,
+  payloading: isLoading,
+});
+
 export const charactersSet = (characters) => ({
   type: CHARACTERS_SET,
-  payload: charactersObj,
+  payload: characters,
 });
-export const characterSetDisplay = (charactersArr) => ({
-  type: CHARACTERS_SET_DISPLAY,
-  payload: charactersArr,
+export const characterDisplaySet = (displayCharacters) => ({
+  type: CHARACTERS_DISPLAY_SET,
+  payload: displayCharacters,
 });

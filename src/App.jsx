@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './actions/actions';
@@ -8,24 +8,23 @@ import NotFound from './components/NotFound.jsx';
 import LoadingSpinner from './components/LoadingSpinner.jsx';
 import Search from './components/Search.jsx';
 
-import { defaultCharacters } from './utils/enums';
 import formatCharacters from './utils/formatCharacters';
-import search from './utils/search';
 
-const App = ({ apiError, charactersSet, characterSetDisplay }) => {
-  const [characters, setCharacters] = useState(null);
-  const [displayCharacters, setDisplayCharacters] = useState(defaultCharacters);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
-
+const App = ({
+  apiError,
+  characters,
+  charactersSet,
+  displayCharacters,
+  isLoading,
+}) => {
   useEffect(() => {
     const fetchCharacters = async () => {
-      console.log('hitting');
       const characterPromise = await fetch('/characters');
-      console.log('promise', characterPromise);
-      const characters = await characterPromise.json();
-      console.log(characters);
-      charactersSet(formatCharacters(characters));
+
+      if (characterPromise.status === 200) {
+        const characters = await characterPromise.json();
+        charactersSet(formatCharacters(characters));
+      }
     };
 
     try {
@@ -35,24 +34,12 @@ const App = ({ apiError, charactersSet, characterSetDisplay }) => {
     }
   }, []);
 
-  const onSearch = (event) => {
-    setSearchQuery(event.target.value);
-
-    if (!event.target.value) {
-      setDisplayCharacters(defaultCharacters);
-    } else {
-      setIsLoading(true);
-      setDisplayCharacters(search(event.target.value, Object.keys(characters)));
-      setIsLoading(false);
-    }
-  };
-
   return (
     <div className="app">
       <div className="title-container">
         <h1>Breaking Bad Character Index</h1>
       </div>
-      <Search onSearch={onSearch} searchQuery={searchQuery} />
+      <Search />
       <div className="character-container">
         {!isLoading ? (
           displayCharacters.length ? (

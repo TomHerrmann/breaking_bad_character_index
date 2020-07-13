@@ -1,32 +1,49 @@
 import {
   API_ERROR,
+  APP_LOADING,
   CHARACTERS_SET,
-  CHARACTERS_SET_DISPLAY,
+  CHARACTERS_DISPLAY_SET,
 } from '../contstants/actionTypes';
 
 import { defaultCharacters } from '../utils/enums';
 
 const intialState = {
   characters: null,
+  defaultCharacters,
   displayCharacters: defaultCharacters,
-  isLoading: false,
+  isLoading: true,
 };
 
 const reducer = (state = intialState, action) => {
-  switch (action.types) {
+  switch (action.type) {
     case API_ERROR: {
       return { ...state };
     }
-    case CHARACTERS_SET: {
-      const { contacts } = action.payload;
+    case APP_LOADING: {
+      const isLoading = action.payload;
+
       return {
         ...state,
-        contacts,
+        isLoading,
+      };
+    }
+    case CHARACTERS_SET: {
+      const characters = action.payload;
+
+      return {
+        ...state,
+        characters,
         isLoading: false,
       };
     }
-    case CHARACTERS_SET_DISPLAY: {
-      return { ...state };
+    case CHARACTERS_DISPLAY_SET: {
+      const displayCharacters = action.payload;
+
+      return {
+        ...state,
+        displayCharacters,
+        isLoading: false,
+      };
     }
     default:
       return state;

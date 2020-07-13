@@ -10,21 +10,13 @@ import Search from './components/Search.jsx';
 
 import formatCharacters from './utils/formatCharacters';
 
-const App = ({
-  apiError,
-  characters,
-  charactersSet,
-  displayCharacters,
-  isLoading,
-}) => {
+const App = ({ characters, charactersSet, displayCharacters, isLoading }) => {
   useEffect(() => {
     const fetchCharacters = async () => {
       const characterPromise = await fetch('/characters');
 
-      if (characterPromise.status === 200) {
-        const characters = await characterPromise.json();
-        charactersSet(formatCharacters(characters));
-      }
+      const characters = await characterPromise.json();
+      charactersSet(formatCharacters(characters));
     };
 
     try {
@@ -41,19 +33,17 @@ const App = ({
       </div>
       <Search />
       <div className="character-container">
-        {!isLoading ? (
-          displayCharacters.length ? (
-            displayCharacters.map((displayCharacter) => (
-              <CharacterCard
-                character={characters[displayCharacter]}
-                key={characters[displayCharacter].char_id}
-              />
-            ))
-          ) : (
-            <NotFound />
-          )
-        ) : (
+        {isLoading ? (
           <LoadingSpinner />
+        ) : displayCharacters.length ? (
+          displayCharacters.map((displayCharacter) => (
+            <CharacterCard
+              character={characters[displayCharacter]}
+              key={characters[displayCharacter].char_id}
+            />
+          ))
+        ) : (
+          <NotFound />
         )}
       </div>
     </div>

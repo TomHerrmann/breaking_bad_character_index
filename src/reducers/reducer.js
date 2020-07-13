@@ -1,5 +1,4 @@
 import {
-  API_ERROR,
   APP_LOADING,
   CHARACTERS_SET,
   CHARACTERS_DISPLAY_SET,
@@ -16,9 +15,6 @@ const intialState = {
 
 const reducer = (state = intialState, action) => {
   switch (action.type) {
-    case API_ERROR: {
-      return { ...state };
-    }
     case APP_LOADING: {
       const isLoading = action.payload;
 

@@ -1,4 +1,3 @@
-export const API_ERROR = 'API_ERROR';
 export const APP_LOADING = 'APP_LOADING';
 export const CHARACTERS_SET = 'CHARACTERS_SET';
 export const CHARACTERS_DISPLAY_SET = 'CHARACTERS_DISPLAY_SET';

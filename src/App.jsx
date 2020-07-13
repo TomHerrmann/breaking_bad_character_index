@@ -26,9 +26,9 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const App = () => {
-  // const [characters, setCharacters] = useState(null);
-  // const [displayCharacters, setDisplayCharacters] = useState(defaultCharacters);
-  // const [searchQuery, setSearchQuery] = useState('');
+  const [characters, setCharacters] = useState(null);
+  const [displayCharacters, setDisplayCharacters] = useState(defaultCharacters);
+  const [searchQuery, setSearchQuery] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -91,7 +91,9 @@ const App = () => {
   );
 };
 
-export default connect(
+const AppContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(App);
+
+export default AppContainer;

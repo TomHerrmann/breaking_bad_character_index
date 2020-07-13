@@ -1,14 +1,18 @@
-import * as types from './types';
+import {
+  CHARACTERS_SET,
+  CHARACTERS_SET_DISPLAY,
+  SEARCH_QUERY_SET,
+} from './types';
 
-export const setCharacters = (charactersObj) => ({
-  type: types.SET_CHARACTERS,
+export const charactersSet = (charactersObj) => ({
+  type: CHARACTERS_SET,
   payload: charactersObj,
 });
-export const setDisplayCharacters = (charactersArr) => ({
-  type: types.SET_DISPLAY_CHARACTERS,
+export const characterSetDisplay = (charactersArr) => ({
+  type: CHARACTERS_SET_DISPLAY,
   payload: charactersArr,
 });
-export const setSearchQuery = (query) => ({
-  type: types.SET_SEARCH_QUERY,
+export const searchQuerySet = (query) => ({
+  type: SEARCH_QUERY_SET,
   payload: query,
 });

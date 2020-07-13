@@ -7,7 +7,7 @@ import {
 import { defaultCharacters } from '../utils/enums';
 
 const intialState = {
-  characters: null,
+  characters: window.localStorage.getItem('bb-characters'),
   defaultCharacters,
   displayCharacters: defaultCharacters,
   isLoading: true,
